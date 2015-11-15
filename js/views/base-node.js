@@ -18,17 +18,28 @@
 
         _createHackNode: function() {
             var hNodeTag = this.$el.prop("tagName");
+            var tIndex = this.$el.attr('n-access-order');
             this.$el.attr('tabindex', -1);
-            var hNode = $('<' + hNodeTag + '>', {
+            var $hNode = $('<div>', {
                 'class': 'n-hack-node',
                 'tabindex': this.$el.attr('n-access-order')
             });
-            this.$el.append(hNode);
-            this.$hNode = hNode;
+            if (this.$el.hasClass('container')) {
+                $hNode.addClass('container');
+            }
+            this.$el.append($hNode);
+            this.$hNode = $hNode;
+            this.setHackText(BaseNode.A_TEXT[tIndex]);
             return this;
         },
 
         _setUpHackNode: function() {
+            this._recalculateDims();
+            this._attacEvents();
+            return this;
+        },
+
+        _recalculateDims: function() {
             var $el = this.$el,
                 pad = BaseNode.HACKNODE_PADDING * 2,
                 pad2 = pad * 2;
@@ -38,20 +49,26 @@
                 top: pad + 'px',
                 left: pad + 'px',
             });
-            this._attacEvents();
-            return this;
         },
 
         _attacEvents: function() {
             this.$hNode.on({
                 'focus': this._focus.bind(this),
                 'focusout': this._focusOut.bind(this),
+                'keyup': function(evt) {
+                    if (evt.keyCode === 32) {
+                        $(this).trigger('click');
+                    }
+                    //if (evt.keyCode === 9) {
+                    //    $(this).trigger('focusout');
+                    //}
+                }
             });
         },
 
         setHackText: function(text) {
             var $text = this.$hNode.find('span');
-            $text = $text.length !== 0 ? $text.length : $('<span>', {
+            $text = $text.length !== 0 ? $text : $('<span>', {
                 class: 'n-hack-text'
             })
             this.$hNode.html(text);
@@ -79,12 +96,14 @@
         },
 
         _focus: function() {
-            console.log('foucessed :: ', this.$hNode.html());
+            //console.log('foucessed :: ', this.$hNode, this.$hNode.html());
+            //this.$el.addClass('hover');
             this.showHack();
             return this;
         },
         _focusOut: function() {
-            console.log('foucesOut :: ', this.$hNode.html());
+            //console.log('foucesOut :: ', this.$hNode, this.$hNode.html());
+            //this.$el.removeClass('hover');
             this.hideHack();
             return this;
         },
@@ -93,6 +112,9 @@
 
 
     }, {
-        HACKNODE_PADDING: 2
+        HACKNODE_PADDING: 2,
+        A_TEXT: {
+
+        }
     });
 })();

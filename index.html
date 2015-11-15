@@ -4,8 +4,10 @@
     <title>Accessible Banking</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
     <script src="Starter Template for Bootstrap_files/ie-emulation-modes-warning.js"></script>
     <script src="js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="js/vendor/jquery-ui.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/ie10-viewport-bug-workaround.js"></script>
     <script src="js/vendor/underscore-min.js"></script>
@@ -28,21 +30,132 @@
                 <!--<a n-access-order="15" class="navbar-brand" href="http://getbootstrap.com/examples/starter-template/#">Project name</a>-->
             </div>
             <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a n-access-order="20">Home</a></li>
-                    <li><a n-access-order="30">About</a></li>
-                    <li><a n-access-order="40">Contact</a></li>
+                <ul id="navbar-ul" class="nav navbar-nav">
+                    <li class="active" menu="home"><a n-access-order="20"><u>H</u>ome</a></li>
+                    <li menu="banking"><a n-access-order="30"><u>B</u>anking</a></li>
+                    <li menu="credit"><a n-access-order="40"><u>C</u>redit Cards</a></li>
+                    <li menu="insurance"><a n-access-order="41"><u>I</u>nsurance</a></li>
+                    <li menu="loans"><a n-access-order="42"><u>L</u>oans</a></li>
+                    <li menu="investments"><a n-access-order="43">Investments</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    
+
     <div id="n-container" n-access-order="50" class="container">
-        <div id="item1" n-access-order="60" class= "n-item">
-
+        <div id="welcome-text" class="well">
+            <p>
+                Welcome to XYZ USA. Now take advantage of our free checking account, online banking , high yield savings, low loan rates, insurance and investment products to manage your money and make life easier!
+            </p>
         </div>
-        <div id="item2" n-access-order="70" class= "n-item">
+        <div id="home" n-access-order="60" class="n-item menu-item show list-group">
+            <a n-access-order="61" class="list-group-item active">
+                <h4 class="list-group-item-heading">Important notices</h4>
+                <p class="list-group-item-text">Now find out detailed information about latest changes in federal regulations.</p>
+            </a>
+            <a n-access-order="62" class="list-group-item">
+                <h4 class="list-group-item-heading">ATM branch locator</h4>
+                <p class="list-group-item-text">Locate your nearest bank branch and ATM branch just by adding your zip code</p>
+            </a>
+            <a n-access-order="63" class="list-group-item">
+                <h4 class="list-group-item-heading">Application forms</h4>
+                <p class="list-group-item-text">Download application forms for new accounts, credit cards and loans</p>
+            </a>
+            <a n-access-order="64" class="list-group-item">
+                <h4 class="list-group-item-heading">About us</h4>
+                <p class="list-group-item-text">Find out about us, services and products we offer and career opportunities.</p>
+            </a>
+        </div>
+        <div id="banking" n-access-order="70" class="n-item menu-item list-group">
+            <a n-access-order="71" class="list-group-item active">
+                <h4 class="list-group-item-heading">Account summary</h4>
+                <p class="list-group-item-text">Click here for your account transaction summary</p>
+            </a>
+            <a n-access-order="72" class="list-group-item">
+                <h4 class="list-group-item-heading">Make a transfer</h4>
+                <p class="list-group-item-text">Easy transfers to intra and inter bank accounts. Make international wire transfers to the countries listed.</p>
+            </a>
+            <a n-access-order="73" class="list-group-item">
+                <h4 class="list-group-item-heading">Pay your bills</h4>
+                <p class="list-group-item-text">Ditch the conventional process of cheques. Schedule online bill payments.</p>
+            </a>
+            <a n-access-order="74" class="list-group-item">
+                <h4 class="list-group-item-heading">Mobile alerts</h4>
+                <p class="list-group-item-text">Get alerts for your banking transactions and EMI payment reminders. Internet banking users can register for this facility online.</p>
+            </a>
+        </div>
+        <div id="credit" n-access-order="80" class="n-item menu-item list-group">
+            <a n-access-order="81" class="list-group-item active">
+                <h4 class="list-group-item-heading">Visa Platinum card</h4>
+                <p class="list-group-item-text">Applicants must be minimum 21 years of age and having a minimum annual income of USD.5000</p>
+            </a>
+            <a n-access-order="82" class="list-group-item">
+                <h4 class="list-group-item-heading">Visa Premium</h4>
+                <p class="list-group-item-text">Applicants must be at least 21 years of age. Offered only to our Premier customers. Premier relationship comes to you by maintaining a minimum balance of USD.7000 quarterly.</p>
+            </a>
+            <a n-access-order="83" class="list-group-item">
+                <h4 class="list-group-item-heading">Advance visa Platinum card</h4>
+                <p class="list-group-item-text">To qualify for Advance visa Platinum card, you should have an Advance account with us. Kindly contact the branch for further details.</p>
+            </a>
+            <a n-access-order="84" class="list-group-item">
+                <h4 class="list-group-item-heading">MMT signature cards</h4>
+                <p class="list-group-item-text">Make the most of rebates and rewards we provide. </p>
+            </a>
+        </div>
 
+        <div id="insurance" n-access-order="90" class="n-item menu-item list-group">
+            <a n-access-order="91" class="list-group-item active">
+                <h4 class="list-group-item-heading">Future smart plan</h4>
+                <p class="list-group-item-text">Plan your future. Future smart plan provides life insurance, insurance against retirement and insurance for illness.</p>
+            </a>
+            <a n-access-order="92" class="list-group-item">
+                <h4 class="list-group-item-heading">Commercial insurance</h4>
+                <p class="list-group-item-text">Protect your business from the unexpected. Opt for a commercial insurance and be worry free.</p>
+            </a>
+            <a n-access-order="93" class="list-group-item">
+                <h4 class="list-group-item-heading">Vehicle insurance</h4>
+                <p class="list-group-item-text">Secure your vehicle against theft and accidental damage.</p>
+            </a>
+            <a n-access-order="94" class="list-group-item">
+                <h4 class="list-group-item-heading">Group insurance</h4>
+                <p class="list-group-item-text">Medical, dental, disability, accident and long term care insurance to groups of employees.</p>
+            </a>
+        </div>
+        <div id="loans" n-access-order="100" class="n-item menu-item list-group">
+            <a n-access-order="101" class="list-group-item active">
+                <h4 class="list-group-item-heading">Home loans</h4>
+                <p class="list-group-item-text">We would be delighted to help you buy your new home. Flexible repayment options and easy EMIs. </p>
+            </a>
+            <a n-access-order="102" class="list-group-item">
+                <h4 class="list-group-item-heading">Loan against property</h4>
+                <p class="list-group-item-text">Let nothing come in the path of fulfilling your dreams.</p>
+            </a>
+            <a n-access-order="103" class="list-group-item">
+                <h4 class="list-group-item-heading">Personal loan</h4>
+                <p class="list-group-item-text">Plan your family vacation or furnish your new home without putting a strain on your wallet.</p>
+            </a>
+            <a n-access-order="104" class="list-group-item">
+                <h4 class="list-group-item-heading">Motor loans</h4>
+                <p class="list-group-item-text">Buy your dream car. Apply online for full or partial loan cover.</p>
+            </a>
+        </div>
+        <div id="investments" n-access-order="110" class="n-item menu-item list-group">
+            <a n-access-order="114" class="list-group-item active">
+                <h4 class="list-group-item-heading">Mutual funds</h4>
+                <p class="list-group-item-text">We offer a list of select mutual fund products, which is based on in-house research methodology in line with various investment needs.</p>
+            </a>
+            <a n-access-order="115" class="list-group-item">
+                <h4 class="list-group-item-heading">Systematic investment plans</h4>
+                <p class="list-group-item-text">We offer you the flexibility of investing through Systematic Investment plans(SIPs)of various AMC</p>
+            </a>
+            <a n-access-order="116" class="list-group-item">
+                <h4 class="list-group-item-heading">Technology solutions</h4>
+                <p class="list-group-item-text">Our wealth dashboard and retail investment systems help you take informed financial decisions.</p>
+            </a>
+            <a n-access-order="117" class="list-group-item">
+                <h4 class="list-group-item-heading">Comprehensive investment planning</h4>
+                <p class="list-group-item-text">Plan your college to retirement and pursue your financial goals by workin with out LPL advisors who will help you develop a customized plan taking into consideration your unique situation and long term goals.</p>
+            </a>
         </div>
     </div>
 </body>

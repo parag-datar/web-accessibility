@@ -1,25 +1,48 @@
 ﻿body {
 }
-*:focus {
-    outline: -webkit-focus-ring-color auto 5px;
+
+[n-access-order]:focus {
+    outline: none !important;
 }
+
+[n-access-order] :hover {
+    cursor: pointer;
+}
+
+#n-nav {
+    background-color: #462d62;
+    color: #ffffff;
+}
+
+    #n-nav li.active a {
+        background-color: #ffffff;
+    }
+
+    #n-nav li.active a {
+        color: #462d62;
+    }
+
+
 #n-container {
-    margin-top: 55px;
-    outline: 1px solid red;
+    margin-top: 75px;
     position: relative;
 }
 
+#welcome-text {
+    padding:20px;
+
+}
+
 .n-hack-node {
-    outline: 2px dotted #808080 !important;
+    outline: 2px dotted #000000 !important;
+    background-color: transparent;
     position: absolute;
 }
 
 .n-item {
-    height: 250px;
-    width: 250px;
+    /*width: 250px;*/
     margin: auto;
     position: relative;
-    outline: 1px solid red;
 }
 
 .n-hide {
@@ -29,5 +52,6 @@
 
 .n-show {
     opacity: 1;
+    background-color: transparent;
     z-index: 100;
 }
