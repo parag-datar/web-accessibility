@@ -18,6 +18,7 @@
 
         _createHackNode: function() {
             var hNodeTag = this.$el.prop("tagName");
+            this.$el.attr('tabindex', -1);
             var hNode = $('<' + hNodeTag + '>', {
                 'class': 'n-hack-node',
                 'tabindex': this.$el.attr('n-access-order')

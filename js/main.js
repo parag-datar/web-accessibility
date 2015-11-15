@@ -19,5 +19,8 @@
         accessibleNodes.push(item);
     }
 
+    var ACCESSIBILITY_TEXT = {
+        "10":''
+    }
     $(document).ready(onReady);
 })();

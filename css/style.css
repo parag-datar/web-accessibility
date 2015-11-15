@@ -1,6 +1,8 @@
 ﻿body {
 }
-
+*:focus {
+    outline: -webkit-focus-ring-color auto 5px;
+}
 #n-container {
     margin-top: 55px;
     outline: 1px solid red;
@@ -8,7 +10,7 @@
 }
 
 .n-hack-node {
-    outline: 2px dotted #808080;
+    outline: 2px dotted #808080 !important;
     position: absolute;
 }
 
@@ -22,8 +24,10 @@
 
 .n-hide {
     opacity: 0;
+    z-index: -1;
 }
 
 .n-show {
     opacity: 1;
+    z-index: 100;
 }
