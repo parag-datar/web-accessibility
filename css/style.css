@@ -1,0 +1,29 @@
+﻿body {
+}
+
+#n-container {
+    margin-top: 55px;
+    outline: 1px solid red;
+    position: relative;
+}
+
+.n-hack-node {
+    outline: 2px dotted #808080;
+    position: absolute;
+}
+
+.n-item {
+    height: 250px;
+    width: 250px;
+    margin: auto;
+    position: relative;
+    outline: 1px solid red;
+}
+
+.n-hide {
+    opacity: 0;
+}
+
+.n-show {
+    opacity: 1;
+}
